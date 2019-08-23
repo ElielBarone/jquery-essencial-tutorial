@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery Tricks</title>
+	<meta charset="utf-8"/>
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js"></script>
+	
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/app.css">
+	<script type="text/javascript" src="assets/app.js"></script>
+</head>
+<body>
+		<div class="app-top"> 
+			<div class="container"> 
+					<img src="assets/logo-jquery.png">
+			</div>
+		</div>
+
+
+
+		<div class="container">
+			<div class="message-container">
+				
+			</div>
+			<div class="row"> 
+				<div class="col-xs-6 form-group"> 
+					<label for="name" class="text-danger">Nome</label>
+					<input id="name" class="form-control" sessao="pessoa-nome" ></input>
+				</div>
+
+				<div class="col-xs-4 form-group"> 
+					<label for="email">Email</label>
+					<input id="email" type="email" class="form-control"></input>
+				</div>
+
+				<div class="col-xs-2 form-group"> 
+					<label for="age" class="text-danger">Idade</label>
+					<input id="age" type="number" class="form-control" sessao="pessoa-idade"></input>
+				</div>
+			</div>
+
+			
+
+
+			<div class="row"> 
+				<div class="col-xs-12 text-right"> 
+						<span class="btn btn-default">Cancelar</span>
+						<span class="btn btn-primary">Salvar</span>
+				</div>
+			</div>
+		</div>	
+
+		<hr />
+		<div class="container">
+
+			<h3 class="text-primary">Jquery</h3>
+			<p class="text-muted">O jquery é muito poderoso quando se trata de manter telas dinâmicas em html via javascrit, e por muito tempo foi absoluto, até a chegada do Angular, mas nem mesmo o angular matou o jquery, pois o angular mantém uma versão mini do jquery em seu código, e quando você adiciona a dependência do jquery, o Angular passa a utilizá-la, em fim, se você quer ter um bom domínio em angular, estude Jquery antes</p>
+
+			<p class="text-muted form-group">A variável <span class="text-danger">$</span> representa o jquery, e você deve utilizar os seletores do jquery para realizar as seguintes tarefas à partir da ferramenta de desenvolvedor do chrome, na aba console:</p>
+
+			<div class="row"> 
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">tag selector</small>
+				<p class="question">1 - Seleione todos os inputs</p>
+				<p class="answer hide">$('input');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+		
+			<div class="question-container col-sm-6">
+				<small class="text-muted">tag selector</small>
+				<p class="question">2 - Seleione todos os labels</p>
+				<p class="answer hide">$('label');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+		
+			<div class="question-container col-sm-6">
+				<small class="text-muted">class selector</small>
+				<p class="question">3 - Para selecionar um objeto através de sua classe é muito simples, pois nada muda em relação aos seletores que vimos até agora, basta que você troque o valor entre parênteses por '.nome-da-classe'. Então selecione todos os elementos que possuem a classe 'text-danger'</p>
+				<p class="answer hide">$('.text-danger');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">class selector</small>
+				<p class="question">4 - Você sabia que o comando .removeClass('class-name') remove uma classe css, assim como o comando .addClass('text-info') adiciona uma classe a um componente específico. Troque a cor dos labels que estão em vermelho para azul, você pode utilizar a classe 'text-info' para obter este resultado</p>
+				<p class="answer hide">$('.text-danger').removeClass('text-danger').addClass('text-info');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+		
+			<div class="question-container col-sm-6">
+				<small class="text-muted">attribute selector</small>
+				<p class="question">5 - Selecione apenas o input do tipo numérico</p>
+				<p class="answer hide">$('[type=number]');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="warning"> </div>
+
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">attribute selector filtered string</small>
+				<p class="question">6 - Selecione todos os elementos da sessão pessoa, ou seja: 'pessoa-nome' e 'pessoa.age'</p>
+				<p class="answer hide">$('[sessao|=pessoa]');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">append</small>
+				<p class="question">7 - Uma das funções mais valiosas supridas pelo jQuery é a 'append', como é de se imaginar, ela serve para que possamos adicionar trechos de código em nosso site, por exemplo:
+				<br />
+				'$('div').append('&#60;h1>Hello Word&#60;/h1>');
+				<br />
+				O nosso formulário tem uma div que servirá para exibirmos mensagens ao usuário, ela possui a classe 'message-container'. Adicione a seguinte mensagem a este container:
+				<i>Preencha os campos e clique em salvar!</i>
+				</p>
+				<p class="answer hide">
+
+				$('.message-container').append('&#60;div class="alert alert-info">Preencha os campos e clique em salvar!&#60;/div>');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">empty</small>
+				<p class="question">8 - Para remover o conteúdo de uma div, você pode usar o método 'empty'. Este método muitas vezes pode ser confundido com o método 'remove', mas há uma diferença crucial entre eles, enquanto o primeiro remove o conteúdo do elemento selecionado, o segundo remove o próprio elemento juntamente com seu conteúdo. Remova agora a mensagem que você acabou de adicionar.
+				</p>
+				<p class="answer hide">$('.message-container').empty();</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">hide</small>
+				<p class="question">9 - Talvez você não precise remover e adicionar um certo elemento, você precisa que ele apenas fique invisível, para isso você pode utilizar a função 'hide'. Apesar de não ser uma boa prática esconder botões, seria melhor deixá-los desabilitados, esconda o botão salvar utilizando a função 'hide'.
+				</p>
+				<p class="answer hide">$('.btn-primary').hide();</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">show</small>
+				<p class="question">10 - Para mostrá-lo novamente você deve usar a função 'show'. Você sabia que é possível adicionar um argumento que torna essa ação animada? experimente mostrar o botão que escondeu, aplicando o argumento '1000', que é a quantidade de milisegundos. Lembre-se que existem outras alternativas para esta ação, como a função 'fadeIn'.
+				</p>
+				<p class="answer hide">$('.btn-primary').show(1000);</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+			<div class="question-container col-sm-6">
+				<small class="text-muted">val</small>
+				<p class="question">11 - Para formulários dinâmicos, é muito importante que consigamos escrever e ler valores de um determinado imput, e é muito simples ler o valor de um input, basta que você utilize a função val(), e para escrever val('hello world').
+				Escreva agoora o seu nome no input 'nome'.
+				</p>
+				<p class="answer hide">$('#name').val('Seu Nome');</p>
+				<span class="glyphicon glyphicon-flag answer-btn"></span>				
+			</div>
+
+
+			</div>
+		</div>
+
+</body>
+</html>
